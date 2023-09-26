@@ -1,0 +1,40 @@
+a
+import java.util.Scanner;
+
+public class StudentGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] name = new String[10];
+        double[] attendance = new double[10];
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter student name: ");
+            name[i] = scanner.nextLine();
+            System.out.print("Enter attendance percentage: ");
+            attendance[i] = scanner.nextDouble();
+            scanner.nextLine(); 
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print(name[i] + " - ");
+            switch ((int) attendance[i] / 10) {
+                case 10:
+                case 9:
+                    System.out.println("A");
+                    break;
+                case 8:
+                    System.out.println("B");
+                    break;
+                case 7:
+                    System.out.println("C");
+                    break;
+                case 6:
+                    System.out.println("D");
+                    break;
+                default:
+                    System.out.println("E");
+                    break;
+            }
+        }
+    }
+}
